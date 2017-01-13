@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace HittaSkyddsrum\App\Http\Resources;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 

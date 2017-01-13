@@ -22,8 +22,8 @@ class PositionMapping extends EmbeddableMapping
 
     public function map(Fluent $builder)
     {
-        $builder->decimal('long')->precision(10)->scale(6);
-        $builder->decimal('lat')->precision(10)->scale(6);
+        $builder->decimal('long')->precision(10)->scale(6)->nullable();
+        $builder->decimal('lat')->precision(10)->scale(6)->nullable();
     }
 
 }
