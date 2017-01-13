@@ -102,8 +102,12 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../routes/web.php';
 });
 
-$app->group(['namespace' => 'HittaSkyddsrum\App\Http\Resources\Shelters'], function ($app) {
+$app->group([
+    'namespace' => 'HittaSkyddsrum\App\Http\Resources',
+    'prefix' => 'api/v1'
+    ], function ($app) {
     require __DIR__.'/../app/HittaSkyddsrum/App/Http/Resources/Shelters/routes.php';
+    require __DIR__.'/../app/HittaSkyddsrum/App/Http/Resources/Hospitals/routes.php';
 });
 
 return $app;

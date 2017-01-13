@@ -6,6 +6,4 @@
  * Time: 20:28
  */
 
-$app->group(['prefix' => '/api/v1'], function () use ($app) {
-    $app->get('shelters', 'SheltersController@index');
-});
+$app->get('shelters', 'Shelters\SheltersController@index');
