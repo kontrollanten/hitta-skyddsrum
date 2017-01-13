@@ -8,10 +8,11 @@
  */
 namespace HittaSkyddsrum\Entities;
 
+use HittaSkyddsrum\App\Foundation\Contracts\PublicObject;
 use HittaSkyddsrum\ValueObjects\Position;
 use HittaSkyddsrum\ValueObjects\Sweref99Position;
 
-class Shelter
+class Shelter implements PublicObject
 {
     /** @var integer */
     private $id;
@@ -37,6 +38,21 @@ class Shelter
     private $position;
     /** @var Sweref99Position */
     private $sweref99Position;
+
+    protected $visibleAttributes = [
+        'id',
+        'address',
+        'municipality',
+        'city',
+        'slots',
+        'airCleaners',
+        'filter',
+        'shelterId',
+        'estateId',
+        'goid',
+        'position',
+        'sweref99Position',
+    ];
 
     public function __construct(
         $id,
@@ -125,5 +141,10 @@ class Shelter
     public function getGoid()
     {
         return $this->goid;
+    }
+
+    public function getVisibleAttributes()
+    {
+        return $this->visibleAttributes;
     }
 }

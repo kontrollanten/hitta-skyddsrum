@@ -85,6 +85,7 @@ $app->register(LaravelDoctrine\ORM\DoctrineServiceProvider::class);
 $app->register(\HittaSkyddsrum\App\Jobs\JobsServiceProvider::class);
 $app->register(\HittaSkyddsrum\App\Features\FeaturesServiceProvider::class);
 $app->register(\HittaSkyddsrum\Infrastructure\Doctrine\Repositorities\RepositoritiesServiceProvider::class);
+$app->register(\HittaSkyddsrum\App\Foundation\FoundationServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

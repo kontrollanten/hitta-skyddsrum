@@ -9,12 +9,16 @@
 
 namespace HittaSkyddsrum\ValueObjects;
 
-class Position
+use HittaSkyddsrum\App\Foundation\Contracts\PublicObject;
+
+class Position implements PublicObject
 {
     /** @var float */
     private $long;
     /** @var float */
     private $lat;
+
+    private $visibleAttributes = ['long', 'lat'];
 
     public function __construct($lat, $long)
     {
@@ -30,5 +34,10 @@ class Position
     public function getLat()
     {
         return $this->lat;
+    }
+
+    public function getVisibleAttributes()
+    {
+        return $this->visibleAttributes;
     }
 }

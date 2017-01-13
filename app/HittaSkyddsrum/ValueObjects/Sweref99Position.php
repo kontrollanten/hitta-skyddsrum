@@ -9,10 +9,14 @@
 namespace HittaSkyddsrum\ValueObjects;
 
 
-class Sweref99Position
+use HittaSkyddsrum\App\Foundation\Contracts\PublicObject;
+
+class Sweref99Position implements PublicObject
 {
     private $x;
     private $y;
+
+    private $visibleAttributes = ['x', 'y'];
 
     public function __construct($x, $y)
     {
@@ -20,13 +24,18 @@ class Sweref99Position
         $this->y = $y;
     }
 
-    public function x()
+    public function getX()
     {
         return $this->x;
     }
 
-    public function y()
+    public function getY()
     {
         return $this->y;
+    }
+
+    public function getVisibleAttributes()
+    {
+        return $this->visibleAttributes;
     }
 }
