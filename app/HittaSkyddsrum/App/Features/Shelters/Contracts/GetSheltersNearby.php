@@ -11,5 +11,5 @@ namespace HittaSkyddsrum\App\Features\Shelters\Contracts;
 
 interface GetSheltersNearby
 {
-    public function handle($lat, $long);
+    public function handle($lat = 0.0, $long = 0.0);
 }
