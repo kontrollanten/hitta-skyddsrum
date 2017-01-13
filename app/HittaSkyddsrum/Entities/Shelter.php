@@ -26,8 +26,8 @@ class Shelter implements PublicObject
     private $slots;
     /** @var boolean */
     private $airCleaners;
-    /** @var boolean */
-    private $filter;
+    /** @var string */
+    private $filterType;
     /** @var string */
     private $shelterId;
     /** @var string */
@@ -46,7 +46,7 @@ class Shelter implements PublicObject
         'city',
         'slots',
         'airCleaners',
-        'filter',
+        'filterType',
         'shelterId',
         'estateId',
         'goid',
@@ -61,7 +61,7 @@ class Shelter implements PublicObject
         $city,
         $slots,
         $airCleaners,
-        $filter,
+        $filterType,
         $shelterId,
         $estateId,
         $goid,
@@ -75,7 +75,7 @@ class Shelter implements PublicObject
         $this->city = $city;
         $this->slots = $slots;
         $this->airCleaners = $airCleaners;
-        $this->filter = $filter;
+        $this->filterType = $filterType;
         $this->shelterId = $shelterId;
         $this->estateId = $estateId;
         $this->goid = $goid;
@@ -123,9 +123,9 @@ class Shelter implements PublicObject
         return $this->airCleaners;
     }
 
-    public function getFilter()
+    public function getFilterType()
     {
-        return $this->filter;
+        return $this->filterType;
     }
 
     public function getShelterId()

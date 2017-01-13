@@ -32,7 +32,7 @@ class ShelterMapping extends EntityMapping
         $builder->string('city');
         $builder->integer('slots');
         $builder->boolean('airCleaners');
-        $builder->boolean('filter');
+        $builder->boolean('filterType');
         $builder->string('shelterId');
         $builder->string('estateId');
         $builder->string('goid');
