@@ -9,6 +9,7 @@
 namespace HittaSkyddsrum\Entities;
 
 use HittaSkyddsrum\ValueObjects\Position;
+use HittaSkyddsrum\ValueObjects\Sweref99Position;
 
 class Shelter
 {
@@ -34,6 +35,8 @@ class Shelter
     private $goid;
     /** @var Position */
     private $position;
+    /** @var Sweref99Position */
+    private $sweref99Position;
 
     public function __construct(
         $id,
@@ -46,7 +49,8 @@ class Shelter
         $shelterId,
         $estateId,
         $goid,
-        $position
+        $position = null,
+        $sweRef99Position
     )
     {
         $this->id = $id;
@@ -60,6 +64,7 @@ class Shelter
         $this->estateId = $estateId;
         $this->goid = $goid;
         $this->position = $position;
+        $this->sweref99Position = $sweRef99Position;
     }
 
     public function getId()
@@ -70,6 +75,11 @@ class Shelter
     public function getPosition()
     {
         return $this->position;
+    }
+
+    public function getSweref99Position()
+    {
+        return $this->sweref99Position;
     }
 
     public function getAddress()

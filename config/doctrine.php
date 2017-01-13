@@ -40,6 +40,7 @@ return [
             'mappings' => [
                 \HittaSkyddsrum\Infrastructure\Doctrine\Mappings\ShelterMapping::class,
                 \HittaSkyddsrum\Infrastructure\Doctrine\Mappings\PositionMapping::class,
+                \HittaSkyddsrum\Infrastructure\Doctrine\Mappings\Sweref99PositionMapping::class,
             ],
             /*
             |--------------------------------------------------------------------------
