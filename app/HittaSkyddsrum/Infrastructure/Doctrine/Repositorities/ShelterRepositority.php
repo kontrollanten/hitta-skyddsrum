@@ -29,20 +29,23 @@ class ShelterRepositority extends EntityRepository implements ShelterRepositoryC
             ->getEntityManager()
             ->createQueryBuilder();
 
-        return $qb
-            ->select(['p'])
+        $query = $qb
+            ->select(['s'])
+            ->from('HittaSkyddsrum\Entities\Shelter', 's')
             ->where(
-                $qb->expr()->gte('lat', $position->getLat() - $distance)
+                $qb->expr()->gte('s.position.lat', $position->getLat() - $distance)
             )
             ->andWhere(
-                $qb->expr()->lte('lat', $position->getLat() + $distance)
+                $qb->expr()->lte('s.position.lat', $position->getLat() + $distance)
             )
             ->andWhere(
-                $qb->expr()->gte('long', $position->getLat() - $distance)
+                $qb->expr()->gte('s.position.long', $position->getLong() - $distance)
             )
             ->andWhere(
-                $qb->expr()->lte('long', $position->getLat() + $distance)
+                $qb->expr()->lte('s.position.long', $position->getLong() + $distance)
             )
-            ->getQuery()->getResult();
+            ->getQuery();
+
+        return $query->getResult();
     }
 }

@@ -7,7 +7,7 @@
  * Time: 22:04
  */
 
-namespace App\Jobs\Positions\Contracts;
+namespace HittaSkyddsrum\App\Jobs\Positions\Contracts;
 
 interface CreatePositionJob
 {

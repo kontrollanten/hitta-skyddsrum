@@ -14,5 +14,5 @@ use HittaSkyddsrum\ValueObjects\Position;
 
 interface GetSheltersNearbyJob
 {
-    public function handle(Position $position);
+    public function handle(Position $position, $distance);
 }

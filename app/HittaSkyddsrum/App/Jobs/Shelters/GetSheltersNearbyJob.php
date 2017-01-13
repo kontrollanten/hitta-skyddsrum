@@ -27,8 +27,8 @@ class GetSheltersNearbyJob implements GetSheltersNearbyJobContract
      * @param Position $position
      * @return ArrayCollection
      */
-    public function handle(Position $position)
+    public function handle(Position $position, $distance)
     {
-        return $this->shelterRepository->getCloseTo($position);
+        return $this->shelterRepository->getCloseTo($position, $distance);
     }
 }
