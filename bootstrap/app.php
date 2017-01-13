@@ -82,6 +82,9 @@ $app->singleton(
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(LaravelDoctrine\ORM\DoctrineServiceProvider::class);
+$app->register(\HittaSkyddsrum\App\Jobs\JobsServiceProvider::class);
+$app->register(\HittaSkyddsrum\App\Features\FeaturesServiceProvider::class);
+$app->register(\HittaSkyddsrum\Infrastructure\Doctrine\Repositorities\RepositoritiesServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +99,10 @@ $app->register(LaravelDoctrine\ORM\DoctrineServiceProvider::class);
 
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../routes/web.php';
+});
+
+$app->group(['namespace' => 'HittaSkyddsrum\App\Http\Resources\Shelters'], function ($app) {
+    require __DIR__.'/../app/HittaSkyddsrum/App/Http/Resources/Shelters/routes.php';
 });
 
 return $app;
