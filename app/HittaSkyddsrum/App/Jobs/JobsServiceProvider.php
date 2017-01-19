@@ -9,6 +9,7 @@
 namespace HittaSkyddsrum\App\Jobs;
 
 use HittaSkyddsrum\App\Jobs\Hospitals\GetClosestHospitalsJob;
+use HittaSkyddsrum\App\Jobs\Hospitals\MapHospitalsJob;
 use HittaSkyddsrum\App\Jobs\Positions\CreatePositionJob;
 use HittaSkyddsrum\App\Jobs\Shelters\GetShelterJob;
 use HittaSkyddsrum\App\Jobs\Shelters\GetSheltersNearbyJob;
@@ -17,6 +18,7 @@ use HittaSkyddsrum\App\Jobs\Shelters\Contracts\GetSheltersNearbyJob as GetShelte
 use HittaSkyddsrum\App\Jobs\Positions\Contracts\CreatePositionJob as CreatePositionJobContract;
 use HittaSkyddsrum\App\Jobs\Shelters\Contracts\GetShelterJob as GetShelterJobContract;
 use HittaSkyddsrum\App\Jobs\Hospitals\Contracts\GetClosestHospitalsJob as GetClosestHospitalsJobContract;
+use HittaSkyddsrum\App\Jobs\Hospitals\Contracts\MapHospitalsJob as MapHospitalsJobContract;
 
 class JobsServiceProvider extends ServiceProvider
 {
@@ -26,5 +28,6 @@ class JobsServiceProvider extends ServiceProvider
         $this->app->bind(CreatePositionJobContract::class, CreatePositionJob::class);
         $this->app->bind(GetShelterJobContract::class, GetShelterJob::class);
         $this->app->bind(GetClosestHospitalsJobContract::class, GetClosestHospitalsJob::class);
+        $this->app->bind(MapHospitalsJobContract::class, MapHospitalsJob::class);
     }
 }

@@ -14,9 +14,9 @@ use HittaSkyddsrum\App\Foundation\Contracts\PublicObject;
 class Position implements PublicObject
 {
     /** @var float */
-    private $long;
+    protected $long;
     /** @var float */
-    private $lat;
+    protected $lat;
 
     private $visibleAttributes = ['long', 'lat'];
 

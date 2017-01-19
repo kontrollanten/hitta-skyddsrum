@@ -25,7 +25,8 @@ class GetClosestHospitalsJob implements GetClosestHospitalsJobContract
         {
             $url = "http://api.offentligdata.minavardkontakter.se/orgmaster-hsa/v1/hsaObjects?lat={$lat}&long={$lng}&distance={$distance}&businessClassificationCode={$businessClassificationCode}";
             $hospitals = json_decode(
-                file_get_contents($url)
+                file_get_contents($url),
+                true
             );
 
             if (count($hospitals) > 0)

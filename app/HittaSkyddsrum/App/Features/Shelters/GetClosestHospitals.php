@@ -12,6 +12,7 @@ use HittaSkyddsrum\App\Features\Shelters\Contracts\GetClosestHospitals as GetClo
 use HittaSkyddsrum\App\Features\Shelters\Contracts\GetShelter;
 use HittaSkyddsrum\App\Foundation\Feature;
 use HittaSkyddsrum\App\Jobs\Hospitals\Contracts\GetClosestHospitalsJob;
+use HittaSkyddsrum\App\Jobs\Hospitals\Contracts\MapHospitalsJob;
 use HittaSkyddsrum\Entities\Shelter;
 
 class GetClosestHospitals extends Feature implements GetClosestHospitalsContract
@@ -20,7 +21,8 @@ class GetClosestHospitals extends Feature implements GetClosestHospitalsContract
     {
         /** @var Shelter $shelter */
         $shelter = $this->run(GetShelter::class, $id);
+        $hospitals = $this->run(GetClosestHospitalsJob::class, $shelter->getPosition());
 
-        return $this->run(GetClosestHospitalsJob::class, $shelter->getPosition());
+        return $this->run(MapHospitalsJob::class, $hospitals);
     }
 }
