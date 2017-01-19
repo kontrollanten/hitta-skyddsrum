@@ -19,7 +19,7 @@ class HospitalsController extends Controller
         $lat = 0.0;
         $lng = 0.0;
         $distance = 100;
-        $businessClassificationCode = 'unknown';
+        $businessClassificationCode = 1100;
 
         return new JsonResponse(
             json_decode(

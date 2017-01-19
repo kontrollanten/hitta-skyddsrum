@@ -9,6 +9,7 @@
 namespace HittaSkyddsrum\App\Http\Resources\Shelters;
 
 
+use HittaSkyddsrum\App\Features\Shelters\Contracts\GetClosestHospitals;
 use HittaSkyddsrum\App\Features\Shelters\Contracts\GetShelter;
 use HittaSkyddsrum\App\Features\Shelters\Contracts\GetSheltersNearby;
 use HittaSkyddsrum\App\Http\Resources\Controller;
@@ -28,5 +29,12 @@ class SheltersController extends Controller
         $id = array_get($request->route()[2], 'id');
 
         return new JsonResponse($getShelter->handle($id));
+    }
+
+    public function showHospitals(Request $request, GetClosestHospitals $getClosestHospital)
+    {
+        $id = array_get($request->route()[2], 'id');
+
+        return new JsonResponse($getClosestHospital->handle($id));
     }
 }
