@@ -14,6 +14,7 @@ use HittaSkyddsrum\ValueObjects\Position;
 
 interface ShelterRepository
 {
+    public function find($id);
     public function store(Shelter $shelter);
     public function getCloseTo(Position $position, $distance);
 }

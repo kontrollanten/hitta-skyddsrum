@@ -32,6 +32,6 @@ class GetSheltersNearby extends Feature implements GetSheltersNearbyContract
         /** @var Position $position */
         $position = $this->run(CreatePositionJob::class, $lat, $long);
 
-        return $this->run(GetSheltersNearbyJob::class, $position, 0.1);
+        return $this->run(GetSheltersNearbyJob::class, $position, 0.05);
     }
 }

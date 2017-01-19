@@ -7,3 +7,4 @@
  */
 
 $app->get('shelters', 'Shelters\SheltersController@index');
+$app->get('shelters/{id}', 'Shelters\SheltersController@show');

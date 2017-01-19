@@ -8,14 +8,17 @@
 
 namespace HittaSkyddsrum\App\Features;
 
+use HittaSkyddsrum\App\Features\Shelters\GetShelter;
 use HittaSkyddsrum\App\Features\Shelters\GetSheltersNearby;
 use Illuminate\Support\ServiceProvider;
 use HittaSkyddsrum\App\Features\Shelters\Contracts\GetSheltersNearby as GetSheltersNearbyContract;
+use HittaSkyddsrum\App\Features\Shelters\Contracts\GetShelter as GetShelterContract;
 
 class FeaturesServiceProvider extends ServiceProvider
 {
     public function register()
     {
         $this->app->bind(GetSheltersNearbyContract::class, GetSheltersNearby::class);
+        $this->app->bind(GetShelterContract::class, GetShelter::class);
     }
 }
