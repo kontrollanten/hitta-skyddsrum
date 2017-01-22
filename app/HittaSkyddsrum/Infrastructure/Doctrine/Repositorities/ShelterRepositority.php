@@ -45,8 +45,8 @@ AS distance FROM shelters s ORDER BY distance ASC LIMIT 0, 100';
 
         $query = $this->getEntityManager()
             ->createNativeQuery($query, $rsm)
-            ->setParameter('lng', '18.0887252')
-            ->setParameter('lat', '59.35330880000001');
+            ->setParameter('lng', $position->getLong())
+            ->setParameter('lat', $position->getLat());
 
         return $query
             ->getResult();
