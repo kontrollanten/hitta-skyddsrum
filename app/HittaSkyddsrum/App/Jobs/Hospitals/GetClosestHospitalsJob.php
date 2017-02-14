@@ -18,10 +18,9 @@ class GetClosestHospitalsJob implements GetClosestHospitalsJobContract
     {
         $lat = $position->getLat();
         $lng = $position->getLong();
-        $distance = 10;
         $businessClassificationCode = 1100;
 
-        for ($n=0; $n<10; $n++)
+        for ($distance=500; $distance<1000; ($distance+100))
         {
             $url = "http://api.offentligdata.minavardkontakter.se/orgmaster-hsa/v1/hsaObjects?lat={$lat}&long={$lng}&distance={$distance}&businessClassificationCode={$businessClassificationCode}";
             $hospitals = json_decode(
@@ -33,8 +32,6 @@ class GetClosestHospitalsJob implements GetClosestHospitalsJobContract
             {
                 break;
             }
-
-            $distance += 10;
         }
 
         if (empty($hospitals))
